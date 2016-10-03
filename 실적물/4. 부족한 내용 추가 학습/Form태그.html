@@ -1,0 +1,78 @@
+<html>
+  <head>
+        <TITLE>form</TITLE>
+  </head>
+      
+  <body bgcolor="#FFFFFF" text="#000000">
+ 	
+
+
+    <form method="post" action="formtest.php">
+     	<input type="hidden" name="subject" value="회원가입양식">
+        <table width="500" border="0" cellspacing="0">
+ 	     	<tr>
+ 	 	     	<td>아이디</td>
+                <td> 
+                 <input type="text" name="id" size="20" maxlength="8">
+                  영문,한글 8자리 이내..
+                </td>
+ 	 	    </tr>
+            <tr>
+ 	 	 	    <td>패스워드</td>
+                <td>     
+                 <input type="password" name="pw" size="20" maxlength="8">
+                 영문 4~8자리미만
+                </td>
+     	 	</tr>
+            <tr>
+     	 	 	<td>이름</td>
+                <td> 
+                 <input type="text" name="Name" size="20">
+                </td>
+ 	     	</tr>
+            <tr>
+ 	     	 	<td>성별</td>
+                <td> 
+                 <input type="radio" name="sex" value="male" checked>
+                  남 &nbsp;&nbsp;&nbsp; 
+                 <input type="radio" name="sex" value="female">여
+                </td>
+     	 	</tr>
+            <tr>
+ 	     	 	<td>직업</td>
+                <td>
+                 <select name="select">
+                  <option>학생</option>
+                  <option>회사원</option>
+                  <option>백수</option>
+                 </select>
+                </td>
+     	 	</tr>
+            <tr>
+ 	 	     	<td>관심분야</td>
+                <td>
+                 <input type="checkbox" name="hobby" value="travel">여행      &nbsp;&nbsp;&nbsp; 
+                 <input type="checkbox" name="hobby" value="sports">스포츠
+                  &nbsp;&nbsp;&nbsp; 
+                 <input type="checkbox" name="hobby" value="movie">영화감
+                 상&nbsp;&nbsp;&nbsp; 
+                 <input type="checkbox" name="hobby" value="game">게임
+                </td>
+ 	     	</tr>
+            <tr>
+ 	 	     	<td>자기소개</td>
+                <td>
+                 <textarea name="comment" cols="50" rows="5"></textarea>
+                </td>
+ 	     	</tr>
+            <tr align="center">
+ 	 	     	<td colspan="2">
+                 <input type="submit" name="Submit" value="회원가입">
+                 &nbsp;&nbsp;&nbsp;
+                 <input type="reset" name="Submit2" value="취소">
+                </td>
+ 	     	</tr>
+     	</table>
+    </form>
+ </body>     
+</html>

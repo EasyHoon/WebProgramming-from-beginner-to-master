@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>Pseudo Elements</title>
+    <style>
+      .a::first-line {
+        color: red;
+      }
+      .b::first-letter {
+        color: red;
+      }
+      .c::before {
+        content: "Before - ";
+        color: red;
+      }
+      .d::after {
+        content: " - After";
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <p><code>::first-line</code></p>
+    <p class="a">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec mollis nulla. Phasellus lacinia tempus mauris eu laoreet. Proin gravida velit dictum dui consequat malesuada. Aenean et nibh eu purus scelerisque aliquet nec non justo.</p>
+    <p><code>::first-letter</code></p>
+    <p class="b">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p><code>::before</code></p>
+    <p class="c">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p><code>::after</code></p>
+    <p class="d">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  </body>
+</html>
