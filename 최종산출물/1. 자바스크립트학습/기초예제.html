@@ -1,0 +1,116 @@
+1.�ڹٽ�ũ��Ʈ�� �̿��� �μ��ϱ�<br>
+<SCRIPT LANGUAGE="JavaScript">
+ <!--
+
+   function printWin()
+
+   {
+   window.print();
+   }
+
+  //-->
+</SCRIPT>
+
+
+
+<INPUT TYPE="button" VALUE="�μ��ϱ�" onclick="printWin()">
+
+<br>-------------------------------------------------------------------<br>
+
+2.�ڹٽ�ũ��Ʈ�� �ѱ��Է� �˻��ϴ� ����<br>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+function hcheck(x){
+  for (i = 0; i < x.hname.value.length; i++)
+  {
+    var CodeNum = x.hname.value.charCodeAt(i);
+    if (CodeNum < 128) {
+    alert("�ѱ۷� �Է��ؾ� �մϴ�.");
+    x.hname.value="";
+    x.hname.focus();
+    return;
+    }
+  }
+alert("�� �Է��ϼ̽��ϴ�.")
+}
+//-->
+</SCRIPT>
+
+
+
+<FORM>
+�̸�: <INPUT NAME="hname">
+<INPUT TYPE="button" VALUE="�˻� ����" onclick="hcheck(this.form)">
+</FORM>
+<br>-------------------------------------------------------------------<br>
+
+3.�ڹٽ�ũ��Ʈ�� �����Է� �˻��ϴ� ����<br>
+
+
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+function n_check(x) {
+if(isNaN(x.n1.value)||isNaN(x.n2.value)){
+alert("���ڸ� �Է��� �ּ���.");
+x.n1.value=x.n2.value="";
+x.n1.focus();
+return;
+}
+else{
+alert("�� �Է��ϼ̽��ϴ�.");
+}
+}
+//-->
+</SCRIPT>
+
+<FORM>
+�޴��� ��ȣ: <INPUT NAME="n1" SIZE="10"> - <INPUT NAME="n2" SIZE="10"">
+<INPUT TYPE="button" VALUE="�˻� ����" onclick="n_check(this.form)">
+</FORM>
+<br>-------------------------------------------------------------------<br>
+
+4.�ڹٽ�ũ��Ʈ�� �ֹι�ȣ Ÿ�缺 �˻���<br>
+
+
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+function c_check(x) {
+var yy = x.c1.value.substring(0,2);
+var mm = x.c1.value.substring(2,4);
+var dd = x.c1.value.substring(4,6);
+var gender = x.c2.value.substring(0,1);
+var ck=0;
+
+// ó�� 7�� �˻�
+if (x.c1.value.length != 6 || x.c2.value.length != 7 || yy < 20 || mm < 1 || mm > 12 || dd < 0 || dd > 31 || gender > 2 || gender < 1) {
+alert("�߸��� �ֹε��Ϲ�ȣ�Դϴ�.");
+x.c1.value=x.c2.value="";
+x.c1.focus();
+return;
+}
+
+//���ڸ� ������ȣ ��ȿ�� �˻�
+var total = x.c1.value + x.c2.value;
+for (i=0; i < 12; i++) {
+ck  += (i%8+2)*total.substring(i, i+1);
+}
+ck = (11-(ck%11))%10;
+if (parseInt(ck) != parseInt(total.substring(12, 13))) {
+alert("�߸��� �ֹε��Ϲ�ȣ�Դϴ�.")
+x.c1.value=x.c2.value="";
+x.c1.focus();
+return;
+}
+alert("�� �Է��ϼ̽��ϴ�.")
+}
+//-->
+</SCRIPT>
+
+
+<FORM>
+�ֹε��� ��ȣ: <INPUT NAME="c1" SIZE="10" MAXLENGTH="6"> -
+<INPUT NAME="c2" SIZE="10" MAXLENGTH="7">
+<INPUT TYPE="button" VALUE="�˻� ����" onclick="c_check(this.form)">
+</FORM>

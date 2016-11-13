@@ -1,0 +1,64 @@
+<script language="Javascript">
+function chk_vend(a)
+{
+                var strNumb = a.value;
+        if        (strNumb.length != 10)
+        {
+                alert("사업자등록번호가 잘못되었습니다.");
+                return false;
+        }
+
+        sumMod  =   0;
+        sumMod  +=  parseInt(strNumb.substring(0,1));
+        sumMod  +=  parseInt(strNumb.substring(1,2)) * 3 % 10;
+        sumMod  +=  parseInt(strNumb.substring(2,3)) * 7 % 10;
+        sumMod  +=  parseInt(strNumb.substring(3,4)) * 1 % 10;
+        sumMod  +=  parseInt(strNumb.substring(4,5)) * 3 % 10;
+        sumMod  +=  parseInt(strNumb.substring(5,6)) * 7 % 10;
+        sumMod  +=  parseInt(strNumb.substring(6,7)) * 1 % 10;
+        sumMod  +=  parseInt(strNumb.substring(7,8)) * 3 % 10;
+        sumMod  +=  Math.floor(parseInt(strNumb.substring(8,9)) * 5 / 10);
+        sumMod  +=  parseInt(strNumb.substring(8,9)) * 5 % 10;
+        sumMod  +=  parseInt(strNumb.substring(9,10));
+
+        if (sumMod % 10  !=  0)
+        {
+                alert("사업자등록번호가 잘못되었습니다.");
+                return false;
+        }
+                alert("유효한 사업자 등록번호 입니다.");
+       return true;
+}
+
+</script>
+
+<input type="text" name="vend" OnBlur="chk_vend(this);">
+
+
+<script language="JavaScript1.2">
+var testresults
+function checkemail(){
+var str=document.validation.emailcheck.value
+var filter=/^(w+(?:.w+)*)@((?:w+.)*w[w-]{0,66}).([a-z]{2,6}(?:.[a-z]{2})?)$/i
+if (filter.test(str))
+testresults=true
+else{
+alert("유효한 이메일 주소가 아닙니다")
+testresults=false
+}
+return (testresults)
+}
+function checkbae(){
+if (document.layers||document.getElementById||document.all)
+return checkemail()
+else
+return true
+}
+</script>
+
+
+<form name="validation" onSubmit="return checkbae()">
+이메일 주소 :<br>
+<input type="text" size=18 name="emailcheck">
+<input type="submit">
+</form>
